@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var matix = [[1, 2, 3], [4, 5, 6]]
+        var sum = 0, success = false;
+        compute_sum: if (matix) {
+            for (var x = 0; x < matix.length; x++) {
+                var row = matix[x];
+                if (!row) {
+                    break compute_sum;
+                }
+                for (var y = 0; y < row.length; y++) {
+                    var cell = row[y];
+                    if (isNaN(cell)) {
+                        break compute_sum;
+                    }
+                    sum += cell;
+                }
+            }
+            console.log('sum: ', sum);
+            success = true;
+        }
+    </script>
+</body>
+
+</html>
