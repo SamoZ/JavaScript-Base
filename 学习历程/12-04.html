@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./12-04.js"></script>
+    <script>
+        /** 
+            继承
+        */
+        var o = {};         // o 从 Object.prototype 中继承对象的方法
+        o.x = 1;            // 给 o 定义一个属性 x
+        var p = inherit(o); // p 继承 o 和 Object.prototype
+        p.y = 2;            // 给 p 定义一个属性 y
+        var q = inherit(p); // q 继承 p 和 o 和 Object.prototype
+        q.z = 3;
+        var s = q.toString(); // toString() 继承自 Object.prototype
+        q.x + q.y; // => 3 : x 和 y 分别继承自 o 和 p
+
+        var unitcircle = {r: 1};
+        var c = inherit(unitcircle); // c 继承属性 r
+        c.x = 1; c.y = 2;
+        c.r = 2;                     // c 覆盖继承来的属性
+        unitcircle.r;                // => 1，原型对象没有修改
+    </script>
+</body>
+</html>
